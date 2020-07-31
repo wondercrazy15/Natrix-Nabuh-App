@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:NabuhEnergyMobile.Controls"
+    xmlns:locals="clr-namespace:NabuhEnergyMobile.Values"
+    x:Class="NabuhEnergyMobile.Views.LoginPage"
+    Padding="10"
+    Title="Login"
+    BackgroundColor="{StaticResource White}">
+
+    <NavigationPage.TitleView>
+        <Grid>
+           <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" Margin="0,0,11,0" FontSize="{StaticResource LargeSize}" Text="Login" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <ImageButton  Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="BottomHyperlinkLabelStyle" TargetType="{x:Type controls:CustomUnderlineLabel}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="IsUnderlined" Value="false" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="9" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+            </Style>
+
+            <Style x:Key="BottomSeparatorLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="Text" Value="|" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <RelativeLayout>
+        <Image Source="nabuh_logo_header" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}" />
+
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+            <Label Text="Account Number" Style="{StaticResource HeaderLabelStyle}" />
+
+            <Entry Keyboard="Numeric" ReturnType="Next" FontSize="Medium" Text="{Binding AccountNumber, Mode=TwoWay}" Style="{StaticResource EntryStyle}" />
+
+            <Label Text="Password" Style="{StaticResource HeaderLabelStyle}" />
+
+            <Entry IsPassword="True" ReturnType="Done" Text="{Binding Password, Mode=TwoWay}" FontSize="Medium" Style="{StaticResource EntryStyle}" />
+        </StackLayout>
+
+        <StackLayout VerticalOptions="Center" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}">
+            <Button Text="Login" Clicked="LoginButton_Clicked" Style="{StaticResource ButtonStyle}" />
+
+            <Button Text="Forgotten Password" Clicked="ForgottenButton_Clicked" Style="{StaticResource ButtonStyle}" />
+
+            <Button Text="Register Now" Clicked="RegisterButton_Clicked" Style="{StaticResource ButtonStyle}" />
+        </StackLayout>
+
+        <Grid RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <controls:CustomUnderlineLabel Text="Contact Us" Style="{StaticResource BottomHyperlinkLabelStyle}">
+                <controls:CustomUnderlineLabel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{x:Static locals:GlobalUrls.ContactUsURL}" NumberOfTapsRequired="1" />
+                </controls:CustomUnderlineLabel.GestureRecognizers>
+            </controls:CustomUnderlineLabel>
+
+            <Label Grid.Column="1" Style="{StaticResource BottomSeparatorLabelStyle}" />
+
+            <controls:CustomUnderlineLabel Grid.Column="2" Text="Cookies" Style="{StaticResource BottomHyperlinkLabelStyle}">
+                <controls:CustomUnderlineLabel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{x:Static locals:GlobalUrls.CookiesURL}" NumberOfTapsRequired="1" />
+                </controls:CustomUnderlineLabel.GestureRecognizers>
+            </controls:CustomUnderlineLabel>
+
+            <Label Grid.Column="3" Style="{StaticResource BottomSeparatorLabelStyle}" />
+
+            <controls:CustomUnderlineLabel Grid.Column="4" Text="Privacy" Style="{StaticResource BottomHyperlinkLabelStyle}">
+                <controls:CustomUnderlineLabel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{x:Static locals:GlobalUrls.PrivacyURL}" NumberOfTapsRequired="1" />
+                </controls:CustomUnderlineLabel.GestureRecognizers>
+            </controls:CustomUnderlineLabel>
+
+            <Label Grid.Column="5" Style="{StaticResource BottomSeparatorLabelStyle}" />
+
+            <controls:CustomUnderlineLabel Grid.Column="6" Text="Terms and Conditions" Style="{StaticResource BottomHyperlinkLabelStyle}">
+                <controls:CustomUnderlineLabel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{x:Static locals:GlobalUrls.TermsAndConditionsURL}" NumberOfTapsRequired="1" />
+                </controls:CustomUnderlineLabel.GestureRecognizers>
+            </controls:CustomUnderlineLabel>
+
+            <Label Grid.Column="7" Style="{StaticResource BottomSeparatorLabelStyle}" />
+
+            <controls:CustomUnderlineLabel Grid.Column="8" MaxLines="2" HorizontalOptions="FillAndExpand" Text="Cancellation&#10;Policy" Style="{StaticResource BottomHyperlinkLabelStyle}">
+                <controls:CustomUnderlineLabel.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="{x:Static locals:GlobalUrls.CancellationPolicyURL}" NumberOfTapsRequired="1" />
+                </controls:CustomUnderlineLabel.GestureRecognizers>
+            </controls:CustomUnderlineLabel>
+
+        </Grid>
+    </RelativeLayout>
+</ContentPage>

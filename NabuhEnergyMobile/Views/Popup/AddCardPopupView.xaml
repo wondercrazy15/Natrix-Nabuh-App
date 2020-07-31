@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:NabuhEnergyMobile.Controls.Behaviors" xmlns:behavior="clr-namespace:NabuhEnergyMobile.Utils.Helpers" x:Class="NabuhEnergyMobile.Views.Popup.AddCardPopupView">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource LittleSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style x:Key="PopupImageStyle" TargetType="{x:Type Image}">
+                <Setter Property="WidthRequest" Value="35" />
+                <Setter Property="WidthRequest" Value="35" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="PopupStackLayoutStyle" TargetType="{x:Type StackLayout}">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Padding" Value="0,0,0,5" />
+            </Style>
+
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <ScrollView Margin="40" Padding="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <Frame>
+            <Grid BackgroundColor="White" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Style="{StaticResource PopupStackLayoutStyle}">
+                        <Image Style="{StaticResource PopupImageStyle}" Source="card_number" />
+                    </StackLayout>
+
+                    <Entry x:Name="CardNumberEntry" Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Start" Placeholder="Card Number">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource PopupEntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Style="{StaticResource PopupStackLayoutStyle}">
+                        <Image Style="{StaticResource PopupImageStyle}" Source="date" />
+                    </StackLayout>
+
+                    <Entry x:Name="ExpirationEntry" Keyboard="Numeric" Grid.Column="1"  Placeholder="Expiry Date(mm/yy)" HorizontalTextAlignment="Start">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource PopupEntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                        <Entry.Behaviors>
+                            <behavior:MaskedBehavior Mask="XX/XX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
+
+                <Grid Grid.Row="2" ColumnSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Style="{StaticResource PopupStackLayoutStyle}">
+                        <Image Style="{StaticResource PopupImageStyle}" Source="card_cvv" />
+                    </StackLayout>
+
+                    <Entry Grid.Column="1" Keyboard="Numeric" x:Name="CardCvvEntry" HorizontalTextAlignment="Start" Placeholder="CVC Code" Text="{Binding UserName.Value, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource PopupEntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                        <Entry.Behaviors>
+                            <local:NumericValidationBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+
+                </Grid>
+                <Button Grid.Row="3" Text="Save" Pressed="Pressed" Style="{StaticResource ButtonsStyle}" />
+            </Grid>
+        </Frame>
+    </ScrollView>
+
+</pages:PopupPage>

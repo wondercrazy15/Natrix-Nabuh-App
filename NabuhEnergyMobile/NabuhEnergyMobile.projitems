@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{DE07C400-AFC8-4AA5-8AAC-9F8D4F3C04CE}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NabuhEnergyMobile</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ForgottenPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\EditProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\UsagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MyAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LiveChatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AddCardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\TopUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AutoTopUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HistoryItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\OtherAmountPopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\SelectCardPopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\AddCardPopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PayInStorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Popup\CodePopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\TopupProcessingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ResetPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ItemsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ItemDetailPage.xaml.cs">
+      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml.cs">
+      <DependentUpon>NewItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Values\GlobalStrings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Values\GlobalUrls.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Values\GlobalService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomUnderlineLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\LineColorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Efects\EntryLineColorEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ForgottenPage.xaml.cs">
+      <DependentUpon>ForgottenPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EditProfilePage.xaml.cs">
+      <DependentUpon>EditProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UsagePage.xaml.cs">
+      <DependentUpon>UsagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MyAccountPage.xaml.cs">
+      <DependentUpon>MyAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LiveChatPage.xaml.cs">
+      <DependentUpon>LiveChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\HistoryViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Login\ILoginService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Login\LoginService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\LoginDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\LoginResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Account\AccountDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\OpenURL\IOpenUrlService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\OpenURL\OpenUrlService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Dialog\IDialogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Dialog\DialogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore\SettingsDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore\ISettingsDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore\CustomEncryptionProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataStore\IPasswordProtectedEncryptionProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RequestProvider\RequestProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RequestProvider\BaseRequestProviderService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RequestProvider\IBaseRequestProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\NotConnectedException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\ServiceIsNotAvailableException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\RequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\AccountNotFoundException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\UnknownRequestException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Helpers\UriHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RequestProvider\IRequestProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\ServiceAuthenticationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\HttpRequestExceptionEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Account\AccessToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Account\Credentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exception\IHandleExceptionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Exception\HandleExceptionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\HttpError.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Exceptions\InvalidValueException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyAccountViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ForgottenViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Helpers\Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AccountLookup\AccountLookupService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AccountLookup\IAccountLookupService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AccessToken\AccessTokenService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Token\TokenDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EditProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Profile\EditProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Profile\EditProfileDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Helpers\RegExHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\EditProfile\IEditProfileService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\EditProfile\EditProfileService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cards\Card.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cards\AttachedCards.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Cards\CardService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Cards\ICardService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cards\CreateCardDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cards\AttachedCardsDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AddCardPage.xaml.cs">
+      <DependentUpon>AddCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\ExtendedLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AddCardViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HistoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\PaymentHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Payments\PaymentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Payments\IPaymentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\PaymentHistoryResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\Payment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\Basket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\CardUsed.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\CreateTokenisedDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\TokenisedCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\PaymentHistoryDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\CardUsedDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\PaymentRecordDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\BasketDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\PaymentUpdateStatusDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\Result\CreateTokenisedResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\PaymentDetailsDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Base\BaseTabView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TopUpPage.xaml.cs">
+      <DependentUpon>TopUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AutoTopUpPage.xaml.cs">
+      <DependentUpon>AutoTopUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\TopupEnumToBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Enums\TopupPaymentEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\CustomButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HistoryItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\History\ReceiptData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HistoryItemPage.xaml.cs">
+      <DependentUpon>HistoryItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopUpViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\ITopupViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Payments\TopupResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopupProcessingViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\OtherAmountPopupView.xaml.cs">
+      <DependentUpon>OtherAmountPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\NumericValidationBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\SelectCardPopupView.xaml.cs">
+      <DependentUpon>SelectCardPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\CountToBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\FirstValidationErrorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\FocusEventArgsConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\InverseBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\InverseCountToBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Converters\ItemTappedEventArgsConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\Base\BindableBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\AddCardPopupView.xaml.cs">
+      <DependentUpon>AddCardPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PayInStorePage.xaml.cs">
+      <DependentUpon>PayInStorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PayInStoreViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Popup\CodePopupView.xaml.cs">
+      <DependentUpon>CodePopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TopupProcessingPage.xaml.cs">
+      <DependentUpon>TopupProcessingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AutoTopUpViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\ForgottenPassword.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Enums\MessageTypeEnum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\ForgottenPasswordDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Password\IPasswordService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\ResetPasswordDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Password\PasswordService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ResetPasswordPage.xaml.cs">
+      <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Login\ResetPassword.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Register\Registration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Register\IRegistrationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Register\RegistrationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Register\RegistrationDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Register\RegistrationResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UsageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Behaviors\FailedSuccessfullToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Helpers\UserSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomListview.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Helpers\MaskedBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Token\UpdateTokenDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomTabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Efects\NoShiftEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Usage\UserUsage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Usage\IUsageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Usage\UsageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Usage\UsageResultDto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MyWebView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ItemDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Values\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\Behaviors\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\Efects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Navigation\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Login\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Login\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Account\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\OpenURL\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Dialog\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\DataStore\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\RequestProvider\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\Exceptions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Exception\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\AccountLookup\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\AccessToken\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Token\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Profile\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\EditProfile\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Cards\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Cards\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\History\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Payments\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Payments\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Payments\Result\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\Converters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\Enums\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Popup\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\Behaviors\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Password\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Register\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Register\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\Usage\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Usage\" />
+  </ItemGroup>
+<Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Splat'">
+        <Aliases>SplatAlias</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:converters="clr-namespace:NabuhEnergyMobile.Utils.Converters" xmlns:local="clr-namespace:NabuhEnergyMobile.Controls.Behaviors" x:Class="NabuhEnergyMobile.Views.TopUpPage">
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton Clicked="Cancel_Clicked" Source="back_arrow" Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" FontSize="{StaticResource LargeSize}" Text="Top-up" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Clicked="Cancel_Clicked"  Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:TopupEnumToBoolConverter x:Key="TopupEnumToBoolConverter" />
+
+            <!-- PaymentCategory -->
+            <system:Int32 x:Key="Gas">1</system:Int32>
+            <system:Int32 x:Key="Electricity">2</system:Int32>
+
+            <!-- Payment Amount Category -->
+            <system:Int32 x:Key="FiveGBP">5</system:Int32>
+            <system:Int32 x:Key="TenGBP">10</system:Int32>
+            <system:Int32 x:Key="FifteenGBP">15</system:Int32>
+            <system:Int32 x:Key="TwentyGBP">20</system:Int32>
+            <system:Int32 x:Key="TwentyFiveGBP">25</system:Int32>
+            <system:Int32 x:Key="Other">8</system:Int32>
+            <!-- Notification Category -->
+            <system:Int32 x:Key="SMS">11</system:Int32>
+            <system:Int32 x:Key="Email">12</system:Int32>
+
+            <!-- Card Category -->
+            <system:Int32 x:Key="SelectCard">13</system:Int32>
+            <!-- Topup Now Category -->
+            <system:Int32 x:Key="TopUp">14</system:Int32>
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaBold}" />
+                <Setter Property="FontSize" Value="{StaticResource LittleSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="TopupButtonsStyle" TargetType="{x:Type local:CustomButton}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaBold}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhButtonTextColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                        <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                    </Trigger>
+                    <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                        <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="TopupButtonsAltStyle" TargetType="{x:Type local:CustomButton}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaBold}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhButtonTextColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsEnabled" Value="True">
+                        <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                    </Trigger>
+                    <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                        <Setter Property="BackgroundColor" Value="{StaticResource NabuhButtonColor}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource NabuhBackgroundColor}">
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="0.45*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="0.45*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.6*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.9*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Margin="10,0,10,0">
+                    <Label Style="{StaticResource HeaderLabelStyle}" FontSize="{StaticResource LargeSize}" Text="Please select the energy you wish to top-up" />
+                    <Label Style="{StaticResource HeaderLabelStyle}" FontSize="{StaticResource LittleSize}" FontFamily="{StaticResource FuturaMedium}" Text="*Please only top-up one Energy source at a time" VerticalOptions="Center" />
+                </StackLayout>
+
+                <Grid Grid.Row="1" Margin="10,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <local:CustomButton  Text="Electricity" IsEnabled="{Binding IsEnableElectricity}" Command="{Binding PaymentTypeCategoryCommand, Mode=OneWay}" CommandParameter="{StaticResource Electricity}" IsSelected="{Binding PaymentTypeCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource Electricity} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+
+                    <local:CustomButton Grid.Column="1" IsEnabled="{Binding IsEnableGas}" Text="Gas" Command="{Binding PaymentTypeCategoryCommand, Mode=OneWay}" CommandParameter="{StaticResource Gas}" IsSelected="{Binding PaymentTypeCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource Gas} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+
+                </Grid>
+
+                <Label Grid.Row="2" Margin="10,0,10,0" Style="{StaticResource HeaderLabelStyle}" Text="How much would you like to Top-up?" />
+
+                <Grid Grid.Row="3" Margin="10,0,10,0">
+                    <Grid.ColumnSpacing>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="5" />
+                            <On Platform="iOS" Value="5" />
+                        </OnPlatform>
+                    </Grid.ColumnSpacing>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <local:CustomButton Text="£5" Command="{Binding PaymentAmountCommand, Mode=OneWay}" IsEnabled="{Binding PaymentTypeCategory}" CommandParameter="{StaticResource FiveGBP}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource FiveGBP} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}" />
+
+                    <local:CustomButton Grid.Column="1" Command="{Binding PaymentAmountCommand, Mode=OneWay}" CommandParameter="{StaticResource TenGBP}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource TenGBP} }" Text="£10" IsEnabled="{Binding PaymentTypeCategory}" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}" />
+
+                    <local:CustomButton Grid.Column="2" Text="£15" Command="{Binding PaymentAmountCommand, Mode=OneWay}" CommandParameter="{StaticResource FifteenGBP}" IsEnabled="{Binding PaymentTypeCategory}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource FifteenGBP} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}" />
+
+                    <local:CustomButton Grid.Column="3" Text="£20" Command="{Binding PaymentAmountCommand, Mode=OneWay}" CommandParameter="{StaticResource TwentyGBP}" IsEnabled="{Binding PaymentTypeCategory}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource TwentyGBP} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}" />
+
+                    <local:CustomButton Grid.Column="4" Text="£25" Command="{Binding PaymentAmountCommand, Mode=OneWay}" CommandParameter="{StaticResource TwentyFiveGBP}" IsEnabled="{Binding PaymentTypeCategory}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource TwentyFiveGBP} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}" />
+
+                    <local:CustomButton Grid.Column="5" Text="{Binding OtherAmount}" Command="{Binding PaymentAmountCommand, Mode=OneWay}" CommandParameter="{StaticResource Other}" IsEnabled="{Binding PaymentTypeCategory}" IsSelected="{Binding PaymentAmountCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource Other} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource TopupButtonsAltStyle}">
+                    </local:CustomButton>
+                </Grid>
+
+                <Label Grid.Row="4" Margin="10,0,10,0" Style="{StaticResource HeaderLabelStyle}" Text="How would you like to receive your confirmation?" />
+
+                <Grid Grid.Row="5" Margin="10,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <local:CustomButton Text="SMS" Command="{Binding PaymentNotificationCommand,Mode=OneWay}" CommandParameter="{StaticResource SMS}" IsEnabled="{Binding PaymentAmountCategory}" IsSelected="{Binding PaymentNotificationCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource SMS} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+
+                    <local:CustomButton Grid.Column="1" Text="Email" Command="{Binding PaymentNotificationCommand,Mode=OneWay}" CommandParameter="{StaticResource Email}" IsEnabled="{Binding PaymentAmountCategory}" IsSelected="{Binding PaymentNotificationCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource Email} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+                </Grid>
+
+                <Grid Grid.Row="6" Margin="10,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="An SMS will cost 15p to UK mobile's" FontFamily="{StaticResource FuturaMedium}" Style="{StaticResource HeaderLabelStyle}" />
+                </Grid>
+
+                <local:CustomButton Grid.Row="7" Margin="10,0,10,0" Text="{Binding SelectedCard}" Command="{Binding PaymentCardCommand,Mode=OneWay}" CommandParameter="{StaticResource SelectCard}" IsEnabled="{Binding PaymentNotificationCategory}" IsSelected="{Binding PaymentCardCategory, Mode=OneWay, Converter={StaticResource TopupEnumToBoolConverter}, ConverterParameter={StaticResource SelectCard} }" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+
+                <Label Grid.Row="8" Margin="10,0,10,0" Style="{StaticResource HeaderLabelStyle}" FontSize="{StaticResource LittleSize}" FontFamily="{StaticResource FuturaMedium}" Text="*Can't see your card? Please add your card by selecting 'Profile'" />
+
+                <local:CustomButton Grid.Row="9" Margin="10,0,10,0" Text="Top-up" EnabledColor="{StaticResource NabuhButtonColor}" Command="{Binding TopupCommand,Mode=OneWay}" IsEnabled="{Binding PaymentCardCategory}" Style="{StaticResource ButtonsStyle}" />
+
+                <Label Grid.Row="10" Style="{StaticResource HeaderLabelStyle}" FontSize="{StaticResource LittleSize}" FontFamily="{StaticResource FuturaMedium}" Text="Click here to use your unique barcode to pay in your local store" />
+
+                <local:CustomButton Grid.Row="11" Padding="3" Margin="10,0,10,15" Text="Pay in Store" Command="{Binding PayInStoreCommand,Mode=OneWay}" EnabledColor="{StaticResource NabuhButtonColor}" Style="{StaticResource ButtonStyle}" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

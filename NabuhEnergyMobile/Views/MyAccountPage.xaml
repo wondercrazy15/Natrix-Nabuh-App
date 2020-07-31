@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BaseTabView xmlns:base="clr-namespace:NabuhEnergyMobile.Views.Base"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="NabuhEnergyMobile.Views.MyAccountPage"
+                  Title="My Account"
+                  IconImageSource="my_account.png">
+    <NavigationPage.TitleView>
+        <Grid>
+           <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" Margin="0,0,10,0" TextColor="White" FontSize="{StaticResource LargeSize}" Text="My Account" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <ImageButton Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BalanceLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource ExtraBigSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource NabuhBackgroundColor}" Padding="15" Spacing="10">
+
+            <Label Text="Balance" FontSize="Title" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" />
+            <Label Text="as of 00:01 this morning" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" />
+            <Grid Margin="{OnPlatform Android='0,15,0,0',iOS='0,25,0,0'}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{OnPlatform iOS='0.5*',Android='0.7*' }" />
+                    <RowDefinition Height="{OnPlatform iOS='0.5*',Android='0.3*' }" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding ImgGas}" Grid.Row="0" Grid.Column="1" />
+                <Image Source="{Binding ImgElectricity}" Grid.Row="0" Grid.Column="0" />
+                <Label Text="{Binding BalanceGas, Mode=OneWay}" Style="{StaticResource BalanceLabelStyle}" TextColor="{StaticResource NabuhButtonColor}" Grid.Row="1" Grid.Column="1" />
+                <Label Text="{Binding BalanceElectricity, Mode=OneWay}" Style="{StaticResource BalanceLabelStyle}" TextColor="{StaticResource NabuhPressedButtonColor}" Grid.Row="1" Grid.Column="0" />
+            </Grid>
+
+            <Label Text="{Binding TariffName, Mode=OneWay}" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource TitleLabelStyle}" HorizontalOptions="Center" />
+
+            <BoxView Style="{StaticResource EmptySpaceStyle}" />
+
+            <Button Text="Top-up" Clicked="TopUpCommand" Style="{StaticResource ButtonsAltStyle}" />
+
+            <!--<Button Text="Set up Auto Top-up" Clicked="AutoTopUpCommand" Style="{StaticResource ButtonsAltStyle}" />-->
+
+            <!--<BoxView Style="{StaticResource EmptySpaceStyle}" />-->
+
+            <Button Text="Logout" Clicked="LogoutButton_Clicked" Style="{StaticResource ButtonStyle}" />
+
+             <BoxView Style="{StaticResource EmptySpaceStyle}" />
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseTabView>

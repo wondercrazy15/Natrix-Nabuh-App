@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "169166097343",
+    "firebase_url": "https://api-7258688909349472183-951461.firebaseio.com",
+    "project_id": "api-7258688909349472183-951461",
+    "storage_bucket": "api-7258688909349472183-951461.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169166097343:android:9ec9adb6d2b7282e7d6f0a",
+        "android_client_info": {
+          "package_name": "uk.co.keyivr.nabuh_energy_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169166097343-go3uonbv1thrubq3jajbm76dep97akic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbuU_UGxaneiDz2Ol2h6n4IalVJsgDdH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169166097343-go3uonbv1thrubq3jajbm76dep97akic.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "169166097343-rg2ijqr1cf8i03s0kl2qjglqkm85gcou.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "uk.co.keyivr.NabuhEnergyMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

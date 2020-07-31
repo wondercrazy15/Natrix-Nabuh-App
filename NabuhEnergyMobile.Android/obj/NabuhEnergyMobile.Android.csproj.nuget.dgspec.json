@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "restore": {
+    "/Volumes/Data/Development/LiveProject/Nabuh/Code/Nabuh/Github_clone/Natrix-Nabuh-App/NabuhEnergyMobile.Android/NabuhEnergyMobile.Android.csproj": {}
+  },
+  "projects": {
+    "/Volumes/Data/Development/LiveProject/Nabuh/Code/Nabuh/Github_clone/Natrix-Nabuh-App/NabuhEnergyMobile.Android/NabuhEnergyMobile.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Data/Development/LiveProject/Nabuh/Code/Nabuh/Github_clone/Natrix-Nabuh-App/NabuhEnergyMobile.Android/NabuhEnergyMobile.Android.csproj",
+        "projectName": "NabuhEnergyMobile.Android",
+        "projectPath": "/Volumes/Data/Development/LiveProject/Nabuh/Code/Nabuh/Github_clone/Natrix-Nabuh-App/NabuhEnergyMobile.Android/NabuhEnergyMobile.Android.csproj",
+        "packagesPath": "/Users/nsmac-mini-05/.nuget/packages/",
+        "outputPath": "/Volumes/Data/Development/LiveProject/Nabuh/Code/Nabuh/Github_clone/Natrix-Nabuh-App/NabuhEnergyMobile.Android/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/nsmac-mini-05/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.446, )"
+            },
+            "ConnectCodeBarcodeFontsLibrary.dll": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Microcharts.Forms": {
+              "target": "Package",
+              "version": "[0.8.5-pre, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Plugin.FirebasePushNotification": {
+              "target": "Package",
+              "version": "[2.3.6, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.1.5.188, )"
+            },
+            "Splat": {
+              "target": "Package",
+              "version": "[9.5.6, )"
+            },
+            "Syncfusion.Xamarin.SfChart": {
+              "target": "Package",
+              "version": "[18.2.0.44, )"
+            },
+            "XF.Material": {
+              "target": "Package",
+              "version": "[1.5.8, )"
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Xam.Plugins.Settings": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Xamarin.Android.Support.Core.Utils": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.CustomTabs": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.CardView": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.v7.MediaRouter": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Build.Download": {
+              "target": "Package",
+              "version": "[0.10.0, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            },
+            "Xamarin.Firebase.Messaging": {
+              "target": "Package",
+              "version": "[60.1142.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.7.0.1080, )"
+            },
+            "Xamarin.GooglePlayServices.Base": {
+              "target": "Package",
+              "version": "[60.1142.1, )"
+            },
+            "ZXing.Net.Mobile": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "ZXing.Net.Mobile.Forms": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "akavache": {
+              "target": "Package",
+              "version": "[6.10.20, )"
+            },
+            "akavache.sqlite3": {
+              "target": "Package",
+              "version": "[6.10.20, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

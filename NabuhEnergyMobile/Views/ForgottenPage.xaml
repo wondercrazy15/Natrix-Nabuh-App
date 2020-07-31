@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage NavigationPage.HasBackButton="True" BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NabuhEnergyMobile.Views.ForgottenPage" Padding="10" Title="Forgotten Password">
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton Clicked="Cancel_Clicked" Source="back_arrow" Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" FontSize="{StaticResource LargeSize}" Text="Forgotten Password" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Clicked="Cancel_Clicked"  Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource LittleSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <Image Source="nabuh_logo_header" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}" >
+                     <Image.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,15,0,0"></On>
+                        </OnPlatform>
+                    </Image.Margin>
+                </Image>
+
+                <Label Text="Using your registered details, please select the method below to reset your password" Style="{StaticResource TitleLabelStyle}" />
+
+                <Grid BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Email  Address" Style="{StaticResource HeaderLabelStyle}">
+                         <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS" Value="13"/>
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                    <Entry Grid.Column="1" Style="{StaticResource EntryStyle}" HorizontalTextAlignment="Start" Keyboard="Email" Text="{Binding ForgottenPassword.Email, Mode=TwoWay}" />
+                    <Grid.Margin>
+                          <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,7,0,7"></On>
+                        </OnPlatform>
+                    </Grid.Margin>
+                </Grid>
+
+                <Grid BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Phone Number" Style="{StaticResource HeaderLabelStyle}">
+                        <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS" Value="13"/>
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                    <Entry Grid.Column="1" HorizontalTextAlignment="Start" Keyboard="Numeric" Text="{Binding ForgottenPassword.Mobile, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <Grid.Margin>
+                          <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,7,0,7"></On>
+                        </OnPlatform>
+                    </Grid.Margin>
+                </Grid>
+
+                <Grid BackgroundColor="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="8*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Account Number" Style="{StaticResource HeaderLabelStyle}" >
+                         <Label.FontSize>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS" Value="13"/>
+                            </OnPlatform>
+                        </Label.FontSize>
+                    </Label>
+                    <Entry Grid.Column="1" Keyboard="Numeric" HorizontalTextAlignment="Start" Text="{Binding ForgottenPassword.AccountNumber, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <Grid.Margin>
+                          <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,7,0,7"></On>
+                        </OnPlatform>
+                    </Grid.Margin>
+                </Grid>
+
+                <Button Text="Reset Password" Command="{Binding ResetPasswordCommand}" Style="{StaticResource ButtonStyle}" Margin="0,20,0,20" />
+
+                <Label FontSize="{StaticResource LargeSize}" Text="A text/email will be received containing details of how to reset your password within the next 15 minutes. If you do not receive this message then contact us on 03300 041 4902 or email customerservice@nabuhenergy.co.uk" Style="{StaticResource TitleLabelStyle}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

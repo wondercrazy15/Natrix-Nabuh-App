@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            NavigationPage.HasNavigationBar="False"
+            android:TabbedPage.IsSmoothScrollEnabled="True"
+            xmlns:views="clr-namespace:NabuhEnergyMobile.Views" xmlns:efects="clr-namespace:NabuhEnergyMobile.Controls.Efects" x:Class="NabuhEnergyMobile.Views.MainPage"
+			android:TabbedPage.ToolbarPlacement="Bottom"
+            BarTextColor="#000000"
+            BarBackgroundColor="#E7F1F2"
+            android:TabbedPage.BarItemColor="#000000"
+            android:TabbedPage.BarSelectedItemColor="#000000">
+
+   
+
+    <TabbedPage.Children>
+        <NavigationPage  Title="Profile" IconImageSource="edit_profile.png" >
+            <x:Arguments>
+                <views:EditProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        
+        <NavigationPage Title="History" IconImageSource="history.png">
+            <x:Arguments>
+                <views:HistoryPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Account" IconImageSource="my_account.png">
+            <x:Arguments>
+                <views:MyAccountPage />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Usage" IconImageSource="usage.png">
+            <x:Arguments>
+                <views:UsagePage />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Chat" IconImageSource="live_chat.png">
+            <x:Arguments>
+                <views:LiveChatPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>

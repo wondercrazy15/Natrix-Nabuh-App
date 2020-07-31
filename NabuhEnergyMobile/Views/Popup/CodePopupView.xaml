@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:NabuhEnergyMobile.Controls.Behaviors" x:Class="NabuhEnergyMobile.Views.Popup.CodePopupView">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <ScrollView Margin="30" Padding="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HeightRequest="250" VerticalOptions="Center">
+        <Frame>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.3*" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Style="{StaticResource HeaderLabelStyle}" Text="Please enter the last 3 digits of the security code from the back of your card" />
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="CV2Entry" HorizontalTextAlignment="Start" Keyboard="Numeric" Placeholder="Enter security code">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource PopupEntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                        <Entry.Behaviors>
+                            <local:NumericValidationBehavior></local:NumericValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
+                <Button Grid.Row="2" Text="Confirm" Pressed="Pressed" Style="{StaticResource ButtonsStyle}" />
+            </Grid>
+        </Frame>
+    </ScrollView>
+</pages:PopupPage>

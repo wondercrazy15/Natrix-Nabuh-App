@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:NabuhEnergyMobile.Utils.Converters" x:Class="NabuhEnergyMobile.Views.TopupProcessingPage">
+    <NavigationPage.TitleView>
+        <Grid>
+           <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" Margin="0,0,11,0" FontSize="{StaticResource LargeSize}" Text="Top-up" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <ImageButton  Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:TopupEnumToBoolConverter x:Key="TopupEnumToBoolConverter" />
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaBold}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource NabuhBackgroundColor}" Padding="15" Spacing="10" VerticalOptions="CenterAndExpand">
+
+            
+
+            <Label Text="{Binding MsgText}" FontSize="{StaticResource HugeSize}" Style="{StaticResource HeaderLabelStyle}" />
+
+            <Label Text="{Binding Text}" Style="{StaticResource HeaderLabelStyle}" />
+
+            <Label TextColor="{StaticResource NabuhPressedButtonColor}" IsVisible="{Binding IsVisible}" Style="{StaticResource HeaderLabelStyle}">
+                <Label.Text>
+                    We have been unable to obtain your Top Up code.
+Please contact the Nabuh Energy Customer Services Team on 03300 041 4902 or email customerservice@nabuhenergy.co.uk
+                </Label.Text>
+            </Label>
+
+            <Label Text="{Binding meterText}" Style="{StaticResource HeaderLabelStyle}" />
+
+            <BoxView Style="{StaticResource EmptySpaceStyle}" />
+
+            <Button Text="Return to My Account" Style="{StaticResource ButtonsAltStyle}" Command="{Binding ReturnCommand, Mode=OneWay}" />
+
+            <Button Text="Top-up Again" Style="{StaticResource ButtonsAltStyle}" Command="{Binding BackCommand, Mode=OneWay}" />
+
+            <!--<BoxView Style="{StaticResource EmptySpaceStyle}" />-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

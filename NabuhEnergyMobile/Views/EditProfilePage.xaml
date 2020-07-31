@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BaseTabView xmlns:base="clr-namespace:NabuhEnergyMobile.Views.Base"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="NabuhEnergyMobile.Views.EditProfilePage"
+                  IconImageSource="edit_profile.png"
+                  
+                  Title="Edit Profile">
+    <NavigationPage.TitleView>
+        <Grid>
+         <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+             <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" Margin="0,0,10,0" FontSize="{StaticResource LargeSize}" Text="Edit Profile" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="{StaticResource NabuhBackgroundColor}">
+            <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="15,0,15,15">
+                
+               
+
+                    <Image HeightRequest="160" Source="nabuh_logo_header" Aspect="AspectFit" HorizontalOptions="FillAndExpand"  />
+
+                     <StackLayout Margin="0,10,0,0">
+                        
+                          <Label Style="{StaticResource HeaderLabelStyle}" Text="Current Password" />
+                          
+                        
+                        <Entry Placeholder="Your Current Password" x:Name="CurrentPwd" IsPassword="true" Text="{Binding EditProfile.CurrentPassword, Mode=TwoWay}">
+                            <Entry.Style>
+                                <OnPlatform x:TypeArguments="Style">
+                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                </OnPlatform>
+                            </Entry.Style>
+                        </Entry>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                             <StackLayout Orientation="Horizontal" Spacing="0" >
+                          <Label Style="{StaticResource HeaderLabelStyle}" VerticalOptions="Center" Text="New Password" />
+                          <ImageButton Source="questionmark_icon" BackgroundColor="Transparent" Clicked="info_clicked"/>
+                          </StackLayout>
+                           
+                            <Image Source="question" HeightRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenPasswordMessageCommand}" NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+
+                        <Entry Placeholder="Your New Password" x:Name="NewPwd" IsPassword="true" Text="{Binding EditProfile.NewPassword, Mode=TwoWay}">
+                            <Entry.Style>
+                                <OnPlatform x:TypeArguments="Style">
+                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                </OnPlatform>
+                            </Entry.Style>
+                        </Entry>
+                    </StackLayout>
+
+                     <StackLayout Margin="0,10,0,0">
+                          <StackLayout Orientation="Horizontal" Spacing="0" >
+                           <Label Style="{StaticResource HeaderLabelStyle}" VerticalOptions="Center" Text="Confirm New Password" />
+                          <ImageButton Source="questionmark_icon" BackgroundColor="Transparent" Clicked="info_clicked"/>
+                          </StackLayout>
+                      
+                        <Entry Placeholder="Your New Password" x:Name="ConfirmPwd" IsPassword="true" Text="{Binding EditProfile.ConfirmNewPassword, Mode=TwoWay}">
+                            <Entry.Style>
+                                <OnPlatform x:TypeArguments="Style">
+                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                </OnPlatform>
+                            </Entry.Style>
+                        </Entry>
+                    </StackLayout>
+
+                 <Button Margin="0,10,0,0" Text="Update" Clicked="UpdateButton_Clicked" Style="{StaticResource ButtonStyle}" />
+
+                <Button Margin="0,10,0,0" Text="Add/Amend Card Details" Clicked="SavedCardButton_Clicked" Style="{StaticResource ButtonsAltStyle}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</base:BaseTabView>

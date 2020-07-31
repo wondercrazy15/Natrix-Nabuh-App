@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NabuhEnergyMobile.Views.RegisterPage"
+             xmlns:controls="clr-namespace:NabuhEnergyMobile.Controls"
+             Title="Registration"
+             Padding="10,0,10,0"
+             BackgroundColor="{StaticResource White}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton Clicked="Cancel_Clicked" Source="back_arrow" Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" TextColor="White" FontSize="{StaticResource LargeSize}" Text="Registration" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Clicked="Cancel_Clicked"  Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <StackLayout>
+                <Image  Source="nabuh_logo_header" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}" >
+                    <Image.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,15,0,0"></On>
+                        </OnPlatform>
+                    </Image.Margin>
+                </Image>
+
+                <Label Style="{StaticResource TitleLabelStyle}" Text="Please use your registered details from when you set your account up with Nabuh Energy." RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Style="{StaticResource HeaderLabelStyle}" Text="Account Number*" />
+                    <Entry Placeholder="Your Account Number" ReturnType="Next" x:Name="tbAccount" Text="{Binding Registration.AccountNumber, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,5,0,5"></On>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+                </StackLayout>
+
+                <StackLayout  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <StackLayout Orientation="Horizontal" Spacing="0" >
+                          <Label Style="{StaticResource HeaderLabelStyle}" VerticalOptions="Center" Text="Password*" />
+                          <ImageButton Source="questionmark_icon" Margin="{OnPlatform iOS='0,-13,0,-15'}" BackgroundColor="Transparent" Clicked="info_clicked"/>
+                    </StackLayout>
+                  
+                    <Entry Placeholder="Your Password" Margin="0,0,0,0" IsPassword="true" ReturnType="Next" x:Name="tbPassword" Text="{Binding Registration.Password, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,5,0,5"></On>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+                </StackLayout>
+
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Style="{StaticResource HeaderLabelStyle}" VerticalOptions="Center" Text="Confirm Password*" />
+                         <ImageButton Source="questionmark_icon" Margin="{OnPlatform iOS='0,-13,0,-15'}" BackgroundColor="Transparent" Clicked="info_clicked"/>
+                    </StackLayout>
+
+                    <Entry Placeholder="Your Password" IsPassword="true" ReturnType="Next" x:Name="tbConfirmPassword" Text="{Binding Registration.ConfirmPassword, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,5,0,5"></On>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+                </StackLayout>
+
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Style="{StaticResource HeaderLabelStyle}" Text="House Number*" />
+                    <Entry Placeholder="Your House Number" ReturnType="Next" x:Name="tbHouseNumber" Text="{Binding Registration.HouseNumber, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,5,0,5"></On>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+                </StackLayout>
+
+                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Style="{StaticResource HeaderLabelStyle}" Text="Postcode*" />
+                    <Entry Placeholder="Your Postcode" ReturnType="Next" x:Name="tbPostcode" Text="{Binding Registration.Postcode, Mode=TwoWay}">
+                        <Entry.Style>
+                            <OnPlatform x:TypeArguments="Style">
+                                <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                            </OnPlatform>
+                        </Entry.Style>
+                    </Entry>
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="0,5,0,5"></On>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                    <Label Style="{StaticResource TitleLabelAltStyle}" Text="Fields with * are required for registration." />
+                </StackLayout>
+
+                <Button  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" Text="Register" Command="{Binding RegistrationCommand,Mode=OneWay}" Style="{StaticResource ButtonsAltStyle}" />
+
+                <BoxView Style="{StaticResource EmptySpaceStyle}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

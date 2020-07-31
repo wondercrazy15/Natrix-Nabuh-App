@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:converters="clr-namespace:NabuhEnergyMobile.Utils.Converters"
+    xmlns:local="clr-namespace:NabuhEnergyMobile.Controls.Behaviors"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NabuhEnergyMobile.Views.Popup.SelectCardPopupView">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+             <converters:InverseCountToBoolConverter x:Key="InverseCountToBoolConverter" />
+             <converters:CountToBoolConverter x:Key="CountToBoolConverter" />
+            
+            <Style x:Key="HeaderLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource LittleSize}" />
+                <Setter Property="TextColor"
+                    Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+                <Setter Property="VerticalOptions"
+                    Value="Center" />
+                <Setter Property="HorizontalTextAlignment"
+                    Value="Center" />
+            </Style>
+
+            </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <StackLayout 
+                Margin="40"
+                Padding="5"
+                BackgroundColor="Transparent"    
+                HorizontalOptions="Center"
+                HeightRequest="250"  
+                VerticalOptions="Center">
+        <Frame HeightRequest="250">
+        
+            <Grid 
+                BackgroundColor="Transparent"
+                ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                
+                    <StackLayout
+                        x:Name="NoCardLayoutContainer"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Grid.Row="0">
+                        <Label 
+                            Style="{StaticResource HeaderLabelStyle}"
+                            FontSize="{StaticResource MediumSize}"
+                            Text="There is no attached cards to account yet!"/>
+                    <Image
+                        Source="no_card"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"/>
+            
+                    </StackLayout>      
+                </Grid>
+                    
+                <Grid
+                    Grid.Row="0"
+                    x:Name="CardExistLayoutContainer"
+                    ColumnSpacing="2"
+                    BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="7*"/>
+                    </Grid.RowDefinitions>
+                    <Label 
+                        BackgroundColor="Transparent"                         
+                        Style="{StaticResource HeaderLabelStyle}" 
+                        FontSize="{StaticResource LittleSize}"
+                        Text="Payment cards saved to your account &#10;(Default payment card is highlighted in red)"/>
+                    <ListView
+                        Grid.Row="1"  
+                        BackgroundColor="Transparent"
+                        x:Name="SelectCardsListView" 
+                        CachingStrategy="RecycleElement"  
+                        ItemSelected="ItemSelected"
+                        SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="5">
+                                        <local:ExtendedLabel 
+                                            Text="{Binding CardNumber}" 
+                                            IsDefaultCard="{Binding IsPreferred}"
+                                            Style="{StaticResource HeaderLabelStyle}" 
+                                            FontSize="{StaticResource LargeSize}">
+                                            <local:ExtendedLabel.Triggers>
+                                                <Trigger TargetType="local:ExtendedLabel"
+                                                    Property="IsDefaultCard" Value="true">
+                                                    <Setter Property="TextColor" Value="{StaticResource NabuhPressedButtonColor}" />
+                                                </Trigger>
+                                                <Trigger TargetType="local:ExtendedLabel"
+                                                    Property="IsDefaultCard" Value="false">
+                                                    <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                                                </Trigger>           
+                                            </local:ExtendedLabel.Triggers>
+                                        </local:ExtendedLabel>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid> 
+            </Grid>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

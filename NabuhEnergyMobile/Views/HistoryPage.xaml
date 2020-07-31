@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BaseTabView xmlns:base="clr-namespace:NabuhEnergyMobile.Views.Base"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="NabuhEnergyMobile.Views.HistoryPage"
+                  xmlns:controls="clr-namespace:NabuhEnergyMobile.Controls"
+                  xmlns:local="clr-namespace:NabuhEnergyMobile.Controls.Behaviors"
+                  xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+                  Title="History"
+                  IconImageSource="history.png">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" Margin="0,0,10,0" TextColor="White" FontSize="{StaticResource LargeSize}" Text="Top-up History" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:FailedSuccessfullToColorConverter x:Key="FailedSuccessfullToColorConverter" />
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource NormalSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="20" BackgroundColor="{StaticResource NabuhBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*" />
+            </Grid.RowDefinitions>
+
+            <controls:CustomListview  Grid.Row="0" SelectionMode="None" ItemsSource="{Binding PaymentHistory}" BackgroundColor="Transparent" x:Name="ItemsListView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+                <!--<x:Arguments>
+                    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                </x:Arguments>-->
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32" iOS="50" Android="65" />
+                </ListView.RowHeight>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:HistoryViewCell>
+                            <Grid BackgroundColor="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding EnergySource}" Style="{StaticResource HeaderLabelStyle}" TextColor="{Binding PaymentStatus, Converter={StaticResource FailedSuccessfullToColorConverter}}" />
+
+                                <Label Grid.Column="1" Text="{Binding UtrnCode}" Style="{StaticResource HeaderLabelStyle}" TextColor="{Binding PaymentStatus, Converter={StaticResource FailedSuccessfullToColorConverter}}" />
+
+                                <Label Grid.Column="2" Text="{Binding DateCreated}" Style="{StaticResource HeaderLabelStyle}" TextColor="{Binding PaymentStatus, Converter={StaticResource FailedSuccessfullToColorConverter}}" />
+
+                                <ImageButton HeightRequest="25" WidthRequest="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" Grid.Column="3" Source="add_icon" Command="{Binding Path=BindingContext.DisplayReceiptTap, Source={x:Reference ItemsListView}}"
+                                                            CommandParameter="{Binding .}" />
+                                
+                            </Grid>
+                        </controls:HistoryViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Header>
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Energy Source" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource HeaderLabelStyle}" />
+
+                        <Label Text="Top-up Code" Grid.Column="1" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource HeaderLabelStyle}" />
+
+                        <Label Text="Date" Grid.Column="2" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource HeaderLabelStyle}" />
+
+                        <Label Text="" Grid.Column="3" FontFamily="{StaticResource FuturaBold}" Style="{StaticResource HeaderLabelStyle}" />
+                    </Grid>
+                </ListView.Header>
+            </controls:CustomListview>
+        </Grid>
+    </ContentPage.Content>
+</base:BaseTabView>

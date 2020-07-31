@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<base:BaseTabView
+            xmlns:base="clr-namespace:NabuhEnergyMobile.Views.Base"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+            xmlns:controls="clr-namespace:NabuhEnergyMobile.Controls"
+            xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" x:Class="NabuhEnergyMobile.Views.UsagePage"
+             Title="Usage"
+             
+             IconImageSource="usage.png">
+    <NavigationPage.TitleView>
+        <Grid>
+           <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton  Padding="7" Grid.Column="0" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+            <Label Grid.Column="1" Margin="0,0,10,0" TextColor="White" FontSize="{StaticResource LargeSize}" Text="Usage" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+             <ImageButton Padding="7" Grid.Column="2" BackgroundColor="Transparent">
+                <ImageButton.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.WidthRequest>
+                <ImageButton.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="35" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </ImageButton.HeightRequest>
+            </ImageButton>
+        </Grid>
+    </NavigationPage.TitleView>
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource NabuhTextColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+      <ContentPage.Content>
+     
+            <chart:SfChart ChartPadding="{OnPlatform Android='20,10,20,10',iOS='5,10,20,10'}">
+          <chart:SfChart.Legend>
+              <chart:ChartLegend/>
+          </chart:SfChart.Legend>
+        <chart:SfChart.PrimaryAxis>
+            <chart:CategoryAxis  EdgeLabelsDrawingMode="Fit" LabelsIntersectAction="MultipleRows">
+                   <chart:CategoryAxis.LabelStyle>
+                       <chart:ChartAxisLabelStyle FontAttributes="Bold" FontSize="7" LabelAlignment="Center" ></chart:ChartAxisLabelStyle>
+                   </chart:CategoryAxis.LabelStyle>
+                  
+                </chart:CategoryAxis>
+        </chart:SfChart.PrimaryAxis>
+        <chart:SfChart.SecondaryAxis>
+            <chart:NumericalAxis EdgeLabelsDrawingMode="Fit">
+                    <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="£ ##.##" FontAttributes="Bold" FontSize="7"/>
+                    </chart:NumericalAxis.LabelStyle>
+             </chart:NumericalAxis>
+
+                    
+
+                 </chart:SfChart.SecondaryAxis>
+         <chart:SplineSeries Color="#01ACDD" EnableTooltip="True" x:Name="GasChart"  Label="Gas" XBindingPath="workedDate" YBindingPath="GasCumulative" > 
+
+
+             <chart:SplineSeries.DataMarker>
+
+		        <chart:ChartDataMarker  MarkerHeight="5"   MarkerWidth="5" ShowMarker="True" ShowLabel="True">
+
+                    <chart:ChartDataMarker.LabelStyle>
+                        <chart:DataMarkerLabelStyle FontSize="4" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                    </chart:ChartDataMarker.LabelStyle>
+
+                </chart:ChartDataMarker>
+            
+	        </chart:SplineSeries.DataMarker>
+
+             
+
+             <chart:SplineSeries.TooltipTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="£" />
+                                    <Label Text="{Binding GasCumulative}"/>
+                                </StackLayout>
+                          </StackLayout>
+                        </DataTemplate>
+                    </chart:SplineSeries.TooltipTemplate>
+            
+         </chart:SplineSeries>
+          <chart:SplineSeries Color="#EC1F28" EnableTooltip="True" x:Name="EnergyChart" Label="Electricity" XBindingPath="workedDate" YBindingPath="ElectricCumulative0" >
+             <chart:SplineSeries.DataMarker>
+
+		        <chart:ChartDataMarker MarkerHeight="5"  MarkerWidth="5" ShowMarker="True" ShowLabel="True">
+
+                     <chart:ChartDataMarker.LabelStyle>
+                        <chart:DataMarkerLabelStyle FontSize="4" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                    </chart:ChartDataMarker.LabelStyle>
+
+                </chart:ChartDataMarker>
+
+	        </chart:SplineSeries.DataMarker>
+                <chart:SplineSeries.TooltipTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="£" />
+                                    <Label Text="{Binding ElectricCumulative0}"/>
+                                </StackLayout>
+                          </StackLayout>
+                        </DataTemplate>
+                    </chart:SplineSeries.TooltipTemplate>
+          </chart:SplineSeries>
+       
+      </chart:SfChart>
+
+    </ContentPage.Content>
+</base:BaseTabView>
