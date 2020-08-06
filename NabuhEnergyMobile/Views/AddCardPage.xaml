@@ -72,9 +72,12 @@
         </Grid.RowDefinitions>
 
         <Image Grid.Row="0" Style="{StaticResource HeaderImageStyle}" />
-
-        <Button Grid.Row="1" Text="Add New Card" Command="{Binding NewCardCommand,Mode=OneWay}" Style="{StaticResource ButtonStyle}" />
-
+        <StackLayout Grid.Row="1" >
+            <Button  Text="Add New Card" Command="{Binding NewCardCommand,Mode=OneWay}" Style="{StaticResource ButtonStyle}" />
+            <Label FontSize="{x:OnPlatform Android='Small' ,iOS='8'}" FontFamily="{StaticResource FuturaBold}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="*to delete a card from the list, please swipe left the last 4 digits" />
+        </StackLayout>
+        
+        
         <StackLayout BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" IsVisible="{Binding AttachedCardsCount, Converter={StaticResource CountToBoolConverter}}">
             <Label Style="{StaticResource HeaderLabelStyle}" Text="There are no payment cards currently attached to your account" />
             <Image Source="no_card" />

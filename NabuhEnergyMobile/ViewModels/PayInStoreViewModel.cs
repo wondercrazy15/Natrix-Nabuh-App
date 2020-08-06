@@ -43,6 +43,7 @@ namespace NabuhEnergyMobile.ViewModels
             IsMsgVisible = false;
             IsElectricityVisible = true;
             IsGasVisible = true;
+            IsNumberVisible = false;
             IsOtherButtonVisible = false;
             MsgText = string.Empty;
             InfoMsg = "Please select the energy you wish to top-up to generate the Barcode";
@@ -83,7 +84,18 @@ namespace NabuhEnergyMobile.ViewModels
                 OnPropertyChanged("IsGasVisible");
             }
         }
+        public bool _isNumberVisible;
+        public bool IsNumberVisible
+        {
+            get => _isNumberVisible;
 
+            set
+            {
+                _isNumberVisible = value;
+                OnPropertyChanged("IsNumberVisible");
+            }
+        }
+        
         public bool _isElectricityVisible;
         public bool IsElectricityVisible
         {
@@ -129,7 +141,7 @@ namespace NabuhEnergyMobile.ViewModels
                 OnPropertyChanged("SelectedEnergyTypeText");
             }
         }
-
+        
         private string _msgText;
         public string MsgText
         {
@@ -139,6 +151,18 @@ namespace NabuhEnergyMobile.ViewModels
             {
                 _msgText = value;
                 OnPropertyChanged("MsgText");
+            }
+        }
+
+        private string _energyNumber;
+        public string EnergyNumber
+        {
+            get => _energyNumber;
+
+            set
+            {
+                _energyNumber = value;
+                OnPropertyChanged("EnergyNumber");
             }
         }
 
@@ -265,6 +289,8 @@ namespace NabuhEnergyMobile.ViewModels
                         IsMsgVisible = false;
                         IsGasVisible = false;
                         IsElectricityVisible = false;
+                        IsNumberVisible = true;
+                        EnergyNumber = Account.Reference2;
                         QrCodeValue = $"{ Account.Reference2 ?? string.Empty}";
                     }
                     else
@@ -287,6 +313,8 @@ namespace NabuhEnergyMobile.ViewModels
                         IsMsgVisible = false;
                         IsElectricityVisible = false;
                         IsGasVisible = false;
+                        IsNumberVisible = true;
+                        EnergyNumber = Account.Reference3;
                         QrCodeValue = $"{ Account.Reference3 ?? string.Empty}";
                     }
                     else
@@ -349,15 +377,18 @@ namespace NabuhEnergyMobile.ViewModels
                 {
                     IsGasVisible = false;
                     IsElectricityVisible = false;
+                   
                     InfoMsg = "There is no Code for Gas or Electricity for this account";
                 }
-                if (string.IsNullOrEmpty(Account.Reference2))
+                else if (string.IsNullOrEmpty(Account.Reference2))
                 {
                     IsGasVisible = false;
+                   
                 }
                 else if (string.IsNullOrEmpty(Account.Reference3))
                 {
                     IsElectricityVisible = false;
+                   
                 }
             }
 

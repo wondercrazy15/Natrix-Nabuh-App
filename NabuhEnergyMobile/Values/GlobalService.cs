@@ -19,11 +19,11 @@ namespace NabuhEnergyMobile.Values
         public const string SchemeEndpoint = "http";
 
         #region Testing Endpoints
-        //public const string BaseServiceEndpoint = "keyivr-api-int.keyivr.co.uk/v1.1";
+       // public const string BaseServiceEndpoint = "keyivr-api-int.keyivr.co.uk/v1.1";
 
-        //public const string ServiceCheckURL = "http://keyivr-api-int.keyivr.co.uk";
+       // public const string ServiceCheckURL = "http://keyivr-api-int.keyivr.co.uk";
 
-        //public const int ApiInstanceId = 1;
+       // public const int ApiInstanceId = 1;
 
         #endregion
 
