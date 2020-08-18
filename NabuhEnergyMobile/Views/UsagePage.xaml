@@ -66,7 +66,7 @@
         <chart:SfChart.PrimaryAxis>
             <chart:CategoryAxis  EdgeLabelsDrawingMode="Fit" LabelsIntersectAction="MultipleRows">
                    <chart:CategoryAxis.LabelStyle>
-                       <chart:ChartAxisLabelStyle FontAttributes="Bold" FontSize="7" LabelAlignment="Center" ></chart:ChartAxisLabelStyle>
+                       <chart:ChartAxisLabelStyle FontAttributes="Bold" FontSize="10" LabelAlignment="Center" ></chart:ChartAxisLabelStyle>
                    </chart:CategoryAxis.LabelStyle>
                   
                 </chart:CategoryAxis>
@@ -74,29 +74,21 @@
         <chart:SfChart.SecondaryAxis>
             <chart:NumericalAxis EdgeLabelsDrawingMode="Fit">
                     <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="£ ##.##" FontAttributes="Bold" FontSize="7"/>
+                            <chart:ChartAxisLabelStyle LabelFormat="£ ##.##" FontAttributes="Bold" FontSize="10"/>
                     </chart:NumericalAxis.LabelStyle>
              </chart:NumericalAxis>
-
-                    
-
-                 </chart:SfChart.SecondaryAxis>
+        </chart:SfChart.SecondaryAxis>
          <chart:SplineSeries Color="#01ACDD" EnableTooltip="True" x:Name="GasChart"  Label="Gas" XBindingPath="workedDate" YBindingPath="GasCumulative" > 
-
-
-             <chart:SplineSeries.DataMarker>
-
-		        <chart:ChartDataMarker  MarkerHeight="5"   MarkerWidth="5" ShowMarker="True" ShowLabel="True">
+            <chart:SplineSeries.DataMarker>
+            <chart:ChartDataMarker  MarkerHeight="5"   MarkerWidth="5" ShowMarker="True" ShowLabel="True">
 
                     <chart:ChartDataMarker.LabelStyle>
-                        <chart:DataMarkerLabelStyle FontSize="4" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
                     </chart:ChartDataMarker.LabelStyle>
 
                 </chart:ChartDataMarker>
             
 	        </chart:SplineSeries.DataMarker>
-
-             
 
              <chart:SplineSeries.TooltipTemplate>
                         <DataTemplate>
@@ -116,7 +108,7 @@
 		        <chart:ChartDataMarker MarkerHeight="5"  MarkerWidth="5" ShowMarker="True" ShowLabel="True">
 
                      <chart:ChartDataMarker.LabelStyle>
-                        <chart:DataMarkerLabelStyle FontSize="4" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
                     </chart:ChartDataMarker.LabelStyle>
 
                 </chart:ChartDataMarker>
