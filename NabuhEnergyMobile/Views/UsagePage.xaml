@@ -74,7 +74,7 @@
         <chart:SfChart.SecondaryAxis>
             <chart:NumericalAxis EdgeLabelsDrawingMode="Fit">
                     <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="£ ##.##" FontAttributes="Bold" FontSize="10"/>
+                            <chart:ChartAxisLabelStyle LabelFormat="##.## kWh" FontAttributes="Bold" FontSize="10"/>
                     </chart:NumericalAxis.LabelStyle>
              </chart:NumericalAxis>
         </chart:SfChart.SecondaryAxis>
