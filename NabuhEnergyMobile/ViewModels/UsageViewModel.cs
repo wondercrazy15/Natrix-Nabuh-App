@@ -96,7 +96,7 @@ namespace NabuhEnergyMobile.ViewModels
                     {
                         if (item.FuelType.Equals("gas"))
                         {
-                            var month = item.ReportDate.ToString("MMM, yy");
+                            var month = item.ReportDate.ToString("dd, MMM");
 
                             GasUsagesList.Add(new DailyReportData
                             {
@@ -108,7 +108,7 @@ namespace NabuhEnergyMobile.ViewModels
                         }
                         else if (item.FuelType.Equals("energy"))
                         {
-                            var month = item.ReportDate.ToString("MMM, yy");
+                            var month = item.ReportDate.ToString("dd, MMM");
 
                             ElectricityUsagesList.Add(new DailyReportData
                             {

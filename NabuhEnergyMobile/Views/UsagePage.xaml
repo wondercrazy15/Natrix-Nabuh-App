@@ -3,7 +3,6 @@
             xmlns:base="clr-namespace:NabuhEnergyMobile.Views.Base"
             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
             xmlns:controls="clr-namespace:NabuhEnergyMobile.Controls"
             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" x:Class="NabuhEnergyMobile.Views.UsagePage"
              Title="Usage"
