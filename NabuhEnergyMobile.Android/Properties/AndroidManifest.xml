@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.11" package="uk.co.keyivr.nabuh_energy_mobile" android:versionCode="11">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.5" package="uk.co.keyivr.nabuh_energy_mobile" android:versionCode="6">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<application android:usesCleartextTraffic="true" android:label="Nabuh Energy" android:allowBackup="false" android:fullBackupOnly="false" android:icon="@mipmap/ic_launcher">
 		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />

@@ -82,7 +82,7 @@
             <chart:ChartDataMarker  MarkerHeight="5"   MarkerWidth="5" ShowMarker="True" ShowLabel="True">
 
                     <chart:ChartDataMarker.LabelStyle>
-                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="##.##" FontAttributes="Bold" LabelPadding="0" />
                     </chart:ChartDataMarker.LabelStyle>
 
                 </chart:ChartDataMarker>
@@ -93,7 +93,7 @@
                         <DataTemplate>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="£" />
+                                    <Label Text="" />
                                     <Label Text="{Binding GasCumulative}"/>
                                 </StackLayout>
                           </StackLayout>
@@ -107,7 +107,7 @@
 		        <chart:ChartDataMarker MarkerHeight="5"  MarkerWidth="5" ShowMarker="True" ShowLabel="True">
 
                      <chart:ChartDataMarker.LabelStyle>
-                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="£ ##.##" FontAttributes="Bold" LabelPadding="0" />
+                        <chart:DataMarkerLabelStyle FontSize="Micro" LabelFormat="##.##" FontAttributes="Bold" LabelPadding="0" />
                     </chart:ChartDataMarker.LabelStyle>
 
                 </chart:ChartDataMarker>
@@ -117,7 +117,7 @@
                         <DataTemplate>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="£" />
+                                    <Label Text="" />
                                     <Label Text="{Binding ElectricCumulative0}"/>
                                 </StackLayout>
                           </StackLayout>
