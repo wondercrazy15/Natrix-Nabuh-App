@@ -111,5 +111,11 @@ namespace NabuhEnergyMobile.Models.Account
 
         [JsonProperty("debt")]
         public double? Debt { get; set; }
+
+        [JsonProperty("meter_balance_electricity_date")]
+        public string MeterBalanceElectricityDate { get; set; }
+
+        [JsonProperty("meter_balance_gas_date")]
+        public string MeterBalanceGasDate { get; set; }
     }
 }

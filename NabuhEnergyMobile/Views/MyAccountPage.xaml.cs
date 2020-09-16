@@ -24,9 +24,16 @@ namespace NabuhEnergyMobile.Views
 
         public MyAccountPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
 
-            BindingContext = myAccountViewModel = new MyAccountViewModel();
+                BindingContext = myAccountViewModel = new MyAccountViewModel();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         async void LogoutButton_Clicked(object sender, EventArgs e)

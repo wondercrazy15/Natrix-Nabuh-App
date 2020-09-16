@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
-    <CodesignProvision>NabuhEnergy Distribution Provision Profile</CodesignProvision>
+    <CodesignProvision>NabuhEnergy V.2 AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution: Key IVR Ltd (82358YA98G)</CodesignKey>
     <MtouchUseLlvm></MtouchUseLlvm>
     <MtouchUseLlvm></MtouchUseLlvm>
@@ -88,7 +88,7 @@
     <CrashReportingApiKey></CrashReportingApiKey>
     <CrashReportingApiKey></CrashReportingApiKey>
     <MtouchLink>SdkOnly</MtouchLink>
-    <CodesignProvision>Nabhuh Devlopment provision profile</CodesignProvision>
+    <CodesignProvision>NabuhEnergy V.2 Development</CodesignProvision>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">

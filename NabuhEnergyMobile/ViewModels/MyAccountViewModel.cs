@@ -37,7 +37,11 @@ namespace NabuhEnergyMobile.ViewModels
         private AccountDto Account;
 
         private string _balanceGas;
+        private string _balanceGasDate;
+        public bool _isBalanceGasDate;
         private string _balanceElectricity;
+        private string _balanceElectricityDate;
+        public bool _isBalanceElectricityDate;
         private string _tariffName;
         private string _imgGas;
         private string _imgElectricity;
@@ -79,6 +83,27 @@ namespace NabuhEnergyMobile.ViewModels
             }
         }
 
+        public string BalanceGasDate
+        {
+            get => _balanceGasDate;
+
+            set
+            {
+                _balanceGasDate = value;
+                OnPropertyChanged("BalanceGasDate");
+            }
+        }
+        public bool IsBalanceGasDate
+        {
+            get => _isBalanceGasDate;
+
+            set
+            {
+                _isBalanceGasDate = value;
+                OnPropertyChanged("IsBalanceGasDate");
+            }
+        }
+
         public string BalanceElectricity
         {
             get => _balanceElectricity;
@@ -87,6 +112,28 @@ namespace NabuhEnergyMobile.ViewModels
             {
                 _balanceElectricity = value;
                 OnPropertyChanged("BalanceElectricity");
+            }
+        }
+
+        public bool IsBalanceElectricityDate
+        {
+            get => _isBalanceElectricityDate;
+
+            set
+            {
+                _isBalanceElectricityDate = value;
+                OnPropertyChanged("IsBalanceElectricityDate");
+            }
+        }
+
+        public string BalanceElectricityDate
+        {
+            get => _balanceElectricityDate;
+
+            set
+            {
+                _balanceElectricityDate = value;
+                OnPropertyChanged("BalanceElectricityDate");
             }
         }
 
@@ -183,13 +230,37 @@ namespace NabuhEnergyMobile.ViewModels
                     TariffName = $"Tariff: { account.TariffName ?? "" + "N/A" + " / " + account.Tariff_Name_Gas }";
                 }
                 else
-                {
+                 {
                     BalanceGas = $"£{ account.MeterBalanceGas ?? 0 }";
                     BalanceElectricity = $"£{ account.MeterBalanceElec ?? 0 }";
                     TariffName = $"Tariff: { account.TariffName ?? "" + account.Tariff_Name_Energy + " / " + account.Tariff_Name_Gas }";
                 }
-
+                if(account.MeterBalanceGas==0 || account.MeterBalanceGas == null)
+                {
+                    IsBalanceGasDate = false;
                     
+                }
+                else
+                {
+                    IsBalanceGasDate = true;
+                  
+                    var MeterBalanceGasDate = account.MeterBalanceGasDate.IndexOf(" ");
+                    var firstString = account.MeterBalanceGasDate.Substring(0, MeterBalanceGasDate);
+                    BalanceGasDate = firstString;
+                }
+                if (account.MeterBalanceElec == 0 || account.MeterBalanceElec == null)
+                {
+                    IsBalanceElectricityDate = false;
+                }
+                else
+                {
+                    IsBalanceElectricityDate = true;
+                    var MeterBalanceElectricityDate = account.MeterBalanceElectricityDate.IndexOf(" ");
+                    var firstString = account.MeterBalanceElectricityDate.Substring(0, MeterBalanceElectricityDate);
+                    BalanceElectricityDate = firstString;
+
+                    //BalanceElectricityDate = account.MeterBalanceElectricityDate;
+                }
                 //DialogServiceDep.ShowSuccess(GlobalStrings.SyncAccountSuccess);
                 try
                 {

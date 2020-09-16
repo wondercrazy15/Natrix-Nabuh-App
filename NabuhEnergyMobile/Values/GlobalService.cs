@@ -19,20 +19,20 @@ namespace NabuhEnergyMobile.Values
         public const string SchemeEndpoint = "http";
 
         #region Testing Endpoints
-        //public const string BaseServiceEndpoint = "keyivr-api-int.keyivr.co.uk/v1.1";
+        public const string BaseServiceEndpoint = "keyivr-api-int.keyivr.co.uk/v1.1";
 
-        //public const string ServiceCheckURL = "http://keyivr-api-int.keyivr.co.uk";
+        public const string ServiceCheckURL = "http://keyivr-api-int.keyivr.co.uk";
 
-        //public const int ApiInstanceId = 1;
+        public const int ApiInstanceId = 1;
 
         #endregion
 
         #region Live Endpoints
-          public const string BaseServiceEndpoint = "nabuh-api.keyivr.com/v1.1";
+        //public const string BaseServiceEndpoint = "nabuh-api.keyivr.com/v1.1";
 
-          public const string ServiceCheckURL = "http://nabuh-api.keyivr.com";
+        //public const string ServiceCheckURL = "http://nabuh-api.keyivr.com";
 
-          public const int ApiInstanceId = 2;
+        //public const int ApiInstanceId = 2;
         #endregion
         public static TimeSpan ValidityTimeToken { get; } = TimeSpan.FromMinutes(15);
 
