@@ -64,7 +64,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="{OnPlatform iOS='0.5*',Android='0.7*' }" />
                     <RowDefinition Height="{OnPlatform iOS='0.1*',Android='0.17*' }" />
-                    <RowDefinition Height="{OnPlatform iOS='0.1*',Android='0.3*' }" />
+                    <RowDefinition Height="{OnPlatform iOS='0.2*',Android='0.3*' }" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -73,26 +73,26 @@
                 <Image Source="{Binding ImgGas}" Grid.Row="0" Grid.Column="1" />
                 <Image Source="{Binding ImgElectricity}" Grid.Row="0" Grid.Column="0" />
                 <StackLayout Margin="{OnPlatform iOS='0,5,0,0',Android='0,5,0,0'}" Grid.Row="1" Grid.Column="0" Spacing="0"  IsVisible="{Binding IsBalanceElectricityDate}">
-                    <Label FontSize="12"  Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" >
+                    <Label FontSize="Caption"  Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" >
                         <Label.FormattedText>
                         <FormattedString>
-                            <Span FontSize="12"  Text="Balance " FontAttributes="Bold"  />
-                            <Span FontSize="12" Text="as of 00:01 on"  />
+                            <Span FontSize="Caption"  Text="Balance " FontAttributes="Bold"  />
+                            <Span FontSize="Caption" Text="as of 00:01 on"  />
                             </FormattedString>
                     </Label.FormattedText>
                     </Label>
-                    <Label FontSize="12"   Text="{Binding BalanceElectricityDate}" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" ></Label>
+                    <Label FontSize="Caption"   Text="{Binding BalanceElectricityDate}" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" ></Label>
                 </StackLayout>
                 <StackLayout Margin="{OnPlatform iOS='0,5,0,0',Android='0,5,0,0'}" Grid.Row="1" Grid.Column="1" Spacing="0" IsVisible="{Binding IsBalanceGasDate}">
-                    <Label FontSize="12"  Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" >
+                    <Label FontSize="Caption"  Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" >
                         <Label.FormattedText>
                         <FormattedString>
-                            <Span FontSize="12" Text="Balance " FontAttributes="Bold"  />
-                            <Span FontSize="12"  Text="as of 00:01 on"  />
+                            <Span FontSize="Caption" Text="Balance " FontAttributes="Bold"  />
+                            <Span FontSize="Caption"  Text="as of 00:01 on"  />
                             </FormattedString>
                     </Label.FormattedText>
                     </Label>
-                    <Label FontSize="12"  Text="{Binding BalanceGasDate}" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" ></Label>
+                    <Label FontSize="Caption"  Text="{Binding BalanceGasDate}" Style="{StaticResource TitleLabelAltStyle}" HorizontalOptions="Center" ></Label>
                 </StackLayout>
                 <Label Margin="{OnPlatform iOS='0,5,0,0',Android='0,5,0,0'}" Text="{Binding BalanceGas, Mode=OneWay}" Style="{StaticResource BalanceLabelStyle}"
                        TextColor="{StaticResource NabuhButtonColor}" Grid.Row="2" Grid.Column="1" />
