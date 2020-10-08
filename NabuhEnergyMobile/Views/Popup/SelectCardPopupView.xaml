@@ -34,11 +34,11 @@
     <StackLayout 
                 Margin="40"
                 Padding="5"
-                BackgroundColor="Transparent"    
+                BackgroundColor="White"    
                 HorizontalOptions="Center"
                 HeightRequest="250"  
                 VerticalOptions="Center">
-        <Frame HeightRequest="250">
+        <Frame HasShadow="False" HeightRequest="250">
         
             <Grid 
                 BackgroundColor="Transparent"
@@ -85,7 +85,8 @@
                         FontSize="{StaticResource LittleSize}"
                         Text="Payment cards saved to your account &#10;(Default payment card is highlighted in red)"/>
                     <ListView
-                        Grid.Row="1"  
+                        Grid.Row="1"
+                        HorizontalScrollBarVisibility="Never"
                         BackgroundColor="Transparent"
                         x:Name="SelectCardsListView" 
                         CachingStrategy="RecycleElement"  

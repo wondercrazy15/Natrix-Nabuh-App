@@ -123,9 +123,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <BundleResource Include="Resources\tab_about.png" />
     <BundleResource Include="Resources\tab_about%402x.png" />
     <BundleResource Include="Resources\tab_about%403x.png" />
@@ -176,6 +173,7 @@
     <BundleResource Include="Resources\gray_balance_electricity.png" />
     <BundleResource Include="Resources\gray_balance_gas.png" />
     <BundleResource Include="Resources\delete.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\nabuh_energy-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

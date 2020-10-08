@@ -25,8 +25,8 @@
 
         </ResourceDictionary>
     </pages:PopupPage.Resources>
-    <ScrollView Margin="40" Padding="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-        <Frame>
+    <StackLayout Margin="40" Padding="5" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <Frame HasShadow="False" BackgroundColor="White"  >
             <Grid BackgroundColor="White" ColumnSpacing="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -102,6 +102,6 @@
                 <Button Grid.Row="3" Text="Save" Pressed="Pressed" Style="{StaticResource ButtonsStyle}" />
             </Grid>
         </Frame>
-    </ScrollView>
+    </StackLayout>
 
 </pages:PopupPage>

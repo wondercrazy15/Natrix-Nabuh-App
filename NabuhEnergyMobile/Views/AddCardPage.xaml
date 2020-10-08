@@ -104,7 +104,7 @@
                                     </SwipeItems>
                                 </SwipeView.RightItems>
                                 
-                                <StackLayout Padding="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <StackLayout Padding="5" BackgroundColor="#F7F7F7" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                     <local:ExtendedLabel x:Name="CardLabel" Style="{StaticResource HeaderLabelStyle}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" IsDefaultCard="{Binding IsPreferred}" Text="{Binding CardNumber}">
                                     <local:ExtendedLabel.Triggers>
                                         <Trigger TargetType="local:ExtendedLabel" Property="IsDefaultCard" Value="true">
