@@ -80,7 +80,7 @@ namespace NabuhEnergyMobile.Views.Popup
                 return false;
             }
 
-            bool isValidCardNumber = CardNumberEntry.Text.Length == 16;
+            bool isValidCardNumber = CardNumberEntry.Text.Length >= 15 && CardNumberEntry.Text.Length<=16;
 
             if (!isValidCardNumber)
             {
@@ -98,7 +98,7 @@ namespace NabuhEnergyMobile.Views.Popup
                 return isValidExpireDate;
             }
 
-            bool isValidCvv = CardCvvEntry.Text.Length == 3;
+            bool isValidCvv = CardCvvEntry.Text.Length >= 3 && CardCvvEntry.Text.Length<=4;
 
             if (!isValidCvv)
             {
