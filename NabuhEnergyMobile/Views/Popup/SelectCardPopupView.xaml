@@ -31,17 +31,17 @@
             </ResourceDictionary>
     </pages:PopupPage.Resources>
 
-    <StackLayout 
+    <ScrollView 
                 Margin="40"
                 Padding="5"
                 BackgroundColor="White"    
                 HorizontalOptions="Center"
                 HeightRequest="250"  
                 VerticalOptions="Center">
-        <Frame HasShadow="False" HeightRequest="250">
+        <Frame HasShadow="False" BackgroundColor="White" HeightRequest="250">
         
             <Grid 
-                BackgroundColor="Transparent"
+                BackgroundColor="White"
                 ColumnSpacing="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -120,5 +120,5 @@
                 </Grid> 
             </Grid>
         </Frame>
-    </StackLayout>
+    </ScrollView>
 </pages:PopupPage>

@@ -59,11 +59,11 @@ namespace NabuhEnergyMobile.Views.Popup
                 return false;
             }
 
-            bool isValidCV2Length = CV2Entry.Text.Length == 3;
+            bool isValidCV2Length = CV2Entry.Text.Length >= 3 && CV2Entry.Text.Length <= 4; ;
 
             if (!isValidCV2Length)
             {
-                await _dialogService.ShowAlertAsync("CVC should contain only three digits!", "Incorrect CVC length", GlobalStrings.OkButton);
+                await _dialogService.ShowAlertAsync("CVC should contain only 3 or 4 digits!", "Incorrect CVC length", GlobalStrings.OkButton);
 
                 return isValidCV2Length;
             }

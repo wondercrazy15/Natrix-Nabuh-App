@@ -12,16 +12,19 @@
             </Style>
         </ResourceDictionary>
     </pages:PopupPage.Resources>
-    <ScrollView Margin="30" Padding="10" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HeightRequest="250" VerticalOptions="Center">
-        <Frame>
+    <StackLayout Margin="30" Padding="10" BackgroundColor="White" HorizontalOptions="FillAndExpand"
+                 HeightRequest="250" VerticalOptions="Center">
+        <Frame HasShadow="False" BackgroundColor="White">
             <Grid BackgroundColor="White">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="0.5*" />
                     <RowDefinition Height="0.5*" />
                     <RowDefinition Height="0.3*" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Style="{StaticResource HeaderLabelStyle}" Text="Please enter the last 3 digits of the security code from the back of your card" />
+                <Label Grid.Row="0" Style="{StaticResource HeaderLabelStyle}"
+                       Text="Please enter the last 3 digits of the security code from the back of your card (4 digits from the front of the card for AMEX)"
+                       />
 
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -42,5 +45,5 @@
                 <Button Grid.Row="2" Text="Confirm" Pressed="Pressed" Style="{StaticResource ButtonsStyle}" />
             </Grid>
         </Frame>
-    </ScrollView>
+    </StackLayout>
 </pages:PopupPage>

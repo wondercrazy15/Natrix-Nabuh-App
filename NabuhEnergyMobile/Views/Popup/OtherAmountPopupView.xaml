@@ -20,11 +20,11 @@
 
     <ScrollView Margin="40"
                 Padding="10"
-                BackgroundColor="Transparent"
+                BackgroundColor="White"
                 HorizontalOptions="FillAndExpand"
                 HeightRequest="250"
                 VerticalOptions="Center">
-        <Frame>
+        <Frame BackgroundColor="White" HasShadow="False">
             <Grid BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
