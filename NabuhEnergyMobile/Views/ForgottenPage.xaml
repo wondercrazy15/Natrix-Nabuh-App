@@ -142,7 +142,7 @@
 
                 <Button Text="Reset Password" Command="{Binding ResetPasswordCommand}" Style="{StaticResource ButtonStyle}" Margin="0,20,0,20" />
 
-                <Label FontSize="{StaticResource LargeSize}" Text="A text/email will be received containing details of how to reset your password within the next 15 minutes. If you do not receive this message then contact us on 03300 041 4902 or email customerservice@nabuhenergy.co.uk" Style="{StaticResource TitleLabelStyle}" />
+                <Label FontSize="{StaticResource LargeSize}" Text="A text/email will be received containing details of how to reset your password within the next 15 minutes. If you do not receive this message then contact us on 0330 041 4902 or email customerservice@nabuhenergy.co.uk" Style="{StaticResource TitleLabelStyle}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
