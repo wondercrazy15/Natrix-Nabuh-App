@@ -65,7 +65,7 @@
             <Label TextColor="{StaticResource NabuhPressedButtonColor}" IsVisible="{Binding IsVisible}" Style="{StaticResource HeaderLabelStyle}">
                 <Label.Text>
                     We have been unable to obtain your Top Up code.
-Please contact the Nabuh Energy Customer Services Team on 03300 041 4902 or email customerservice@nabuhenergy.co.uk
+Please contact the Nabuh Energy Customer Services Team on 0330 041 4902 or email customerservice@nabuhenergy.co.uk
                 </Label.Text>
             </Label>
 
